@@ -101,7 +101,7 @@ func loop(ip string, token string) {
 		slog.Debug(fmt.Sprintf("Checking for export window, current time: %s", now.Format("2006-01-02 15:04:05")))
 
 		// Check if we are almost at the end of the day and we haven't already exported the data
-		if now.Hour() == 19 && now.Minute() == 9 && (latestExportDay == -1 || latestExportDay != now.Day()) {
+		if now.Hour() == 23 && now.Minute() == 59 && (latestExportDay == -1 || latestExportDay != now.Day()) {
 			slog.Info(fmt.Sprintf("In export window, current time: %s", now.Format("2006-01-02 15:04:05")))
 
 			// Retrieve the data
